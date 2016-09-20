@@ -1,13 +1,3 @@
-var gNiveau;
-var gCurrentColorValue;
-var gAddresseCourante;
-
-var gStackColor1;
-var gStackColor2;
-var gStackColor3;
-var gStackColor4;
-var gStackColor5;
-
 var gNiveau1Depart = {
 	orangeDebut: { addresse: { row: 7, column: 9 }, value: 1 },
 	orangeFin: { addresse: { row: 9, column: 8 }, value: 1 },
@@ -40,10 +30,7 @@ $(function() {
 
     	var grille = $("#divGrille");
 
-    	grille.grid("cells").each(function (i, cell) {
-    		$(cell).cell('option', 'value', 0)
-    		$(cell).removeClass("valueCurrentlySelected");
-    	});
+    	grille.grid("cells").cell('option', 'value', 0).removeClass("valueCurrentlySelected");
 
     	$(".startingCircle").removeClass("startingCircle");
 
@@ -97,12 +84,13 @@ $(function() {
             if (!stackIsEmptyForValue(value) && !isPossibleNextAddress(pressedAddress)) {
                 clearStackForValue(value);
                 gAddresseCourante = pressedAddress;
-                pushCurrentValueInStack();
             }
             else if (lastValueInStack != cell.cell('option', 'address')) 
             {
+                gAddresseCourante = lastValueInStack(value);
+            }
+            else {
                 gAddresseCourante = pressedAddress;
-                pushCurrentValueInStack();   
             }
     		currentValueChanged();
     	} else if (isPossibleNextAddress(pressedAddress)) {
@@ -122,66 +110,13 @@ $(function() {
     	$("#divGrille").grid("cellsByCriterias", { value: gCurrentColorValue }).addClass("valueCurrentlySelected");
     }
 
-    function pushCurrentValueInStack() {
-        switch (gCurrentColorValue) {
-            case 1: gStackColor1.push(gAddresseCourante); break;
-            case 2: gStackColor2.push(gAddresseCourante); break;
-            case 3: gStackColor3.push(gAddresseCourante); break;
-            case 4: gStackColor4.push(gAddresseCourante); break;
-            case 5: gStackColor5.push(gAddresseCourante); break;
-        }
-    }
-
-    function popNextValueInStack(value) {
-        switch (value) {
-            case 1: return gStackColor1.pop();
-            case 2: return gStackColor2.pop();
-            case 3: return gStackColor3.pop();
-            case 4: return gStackColor4.pop();
-            case 5: return gStackColor5.pop();
-        }
-    }   
-
-    function lastValueInStack(value) {
-        switch (value) {
-            case 1: return gStackColor1.slice(-1)[0];
-            case 2: return gStackColor2.slice(-1)[0];
-            case 3: return gStackColor3.slice(-1)[0];
-            case 4: return gStackColor4.slice(-1)[0];
-            case 5: return gStackColor5.slice(-1)[0];
-        }
-    }
-
-    function stackIsEmptyForValue(value) {
-        switch (value) {
-            case 1: return gStackColor1.lenght == 0;
-            case 2: return gStackColor2.lenght == 0;
-            case 3: return gStackColor3.lenght == 0;
-            case 4: return gStackColor4.lenght == 0;
-            case 5: return gStackColor5.lenght == 0;
-        }   
-    }
-
-    function clearStackForValue(value) {
-        switch (value) {
-            case 1: return gStackColor1 = [];
-            case 2: return gStackColor2 = [];
-            case 3: return gStackColor3 = [];
-            case 4: return gStackColor4 = [];
-            case 5: return gStackColor5 = [];
-        }
-    }
-
     function preparerPartie() {
     	gNiveau = 1;
     	gCurrentColorValue = 0;
 
     	var grille = $("#divGrille");
     	
-    	$("#divGrille").grid("cells").each(function (i, cell) {
-    		var cell = $(cell);
-    		cell.append('<div class="colorCircle"></div>');
-    	});
+    	$("#divGrille").grid("cells").cell().append('<div class="colorCircle"></div>');
 
     	nouvellePartie();
     }
@@ -190,7 +125,7 @@ $(function() {
         if (gAddresseCourante == null)
             return false;
 
-    	if ($("#divGrille").grid("cellAt", address) == gCurrentColorValue && address != gAddresseCourante)
+    	if (address == gAddresseCourante)
     		return false;
 
     	if (address.row - 1 == gAddresseCourante.row && address.column == gAddresseCourante.column)
