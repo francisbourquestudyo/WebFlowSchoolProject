@@ -38,6 +38,16 @@ function pushCurrentValueInStack() {
         }   
     }
 
+    function stackContainsAddress(value, address) {
+        switch (value) {
+            case 1: return gStackColor1.indexOf(address) != -1;
+            case 2: return gStackColor2.indexOf(address) != -1;
+            case 3: return gStackColor3.indexOf(address) != -1;
+            case 4: return gStackColor4.indexOf(address) != -1;
+            case 5: return gStackColor5.indexOf(address) != -1;
+        }   
+    }
+
     function clearStackForValue(value) {
         switch (value) {
             case 1: return gStackColor1 = [];

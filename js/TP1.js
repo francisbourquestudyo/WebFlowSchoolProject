@@ -15,7 +15,8 @@ var gSolutionNiveau1;
 $(function() {
 	$("#btnNouvellePartie").on('click', nouvellePartie);
 
-    $(".learningJQ-cell").on("click", traiteClick);
+    $(".learningJQ-cell").on("click", traiterClick);
+    $(".learningJQ-cell").mouseenter(traiterHoverIn);
     
     preparerPartie();
 
@@ -45,15 +46,46 @@ $(function() {
     	console.log("solutionner");
     }
 
-    function traiteClick(e, info) {
+    function traiterClick(e, info) {
+        var cell = $(this);
+        var value = $(this).cell('option').value;
+        var pressedAddress = $(this).cell('option', 'address');
+
+        if (gCurrentColorValue != 0) {
+            gCurrentColorValue = 0;
+            gAddresseCourante = null;
+            currentValueChanged();
+        }
+        else if (cell.hasClass("startingCircle")) {
+            gCurrentColorValue = value;
+            
+            if (!stackIsEmptyForValue(value) && !isPossibleNextAddress(pressedAddress)) {
+                clearStackForValue(value);
+                gAddresseCourante = pressedAddress;
+            }
+            else if (lastValueInStack != cell.cell('option', 'address')) 
+            {
+                gAddresseCourante = lastValueInStack(value);
+            }
+            else {
+                gAddresseCourante = pressedAddress;
+            }
+
+            pushCurrentValueInStack();
+            currentValueChanged();
+        }
+    }
+
+    function traiterHoverIn(e, info) {
     	var cell = $(this);
     	var value = $(this).cell('option').value;
     	var pressedAddress = $(this).cell('option', 'address');
 
-    	if (value == 0 && gCurrentColorValue == 0)
+    	if (gCurrentColorValue == 0)
     		return;
 
-    	if (value != 0 && gCurrentColorValue != value && !cell.hasClass("startingCircle")) {
+    	if (value != 0 && gCurrentColorValue != value && !cell.hasClass("startingCircle") && isPossibleNextAddress(pressedAddress) ||
+                lastValueInStack(gCurrentColorValue) != pressedAddress && stackContainsAddress(gCurrentColorValue, pressedAddress)) {
     		var address;
             do {
                 address = popNextValueInStack(value);
@@ -67,47 +99,32 @@ $(function() {
             cell.cell('option', 'value', gCurrentColorValue);
             cell.addClass("valueCurrentlySelected");
             gAddresseCourante = pressedAddress;
+            pushCurrentValueInStack();
             return;
-    	}
-
-        if (value != 0 && gCurrentColorValue == value && lastValueInStack(gCurrentColorValue) == pressedAddress && !cell.hasClass("startingCircle")) {
-            cell.cell('option', 'value', 0);
-            cell.removeClass("valueCurrentlySelected");
-            popNextValueInStack(value);
+    	} else if (value != 0 && gCurrentColorValue == value && isPossibleNextAddress(pressedAddress) &&
+             (!cell.hasClass("startingCircle") || cell.hasClass("startingCircle") && stackContainsAddress(value, pressedAddress))) {
+            var tempCell = $("#divGrille").grid("cellAt", popNextValueInStack(value));
+            tempCell.cell('option', 'value', 0);
+            tempCell.removeClass("valueCurrentlySelected");
             gAddresseCourante = lastValueInStack(value);
             return;
-        }
-
-    	if (cell.hasClass("startingCircle")) {
-    		gCurrentColorValue = value;
-            
-            if (!stackIsEmptyForValue(value) && !isPossibleNextAddress(pressedAddress)) {
-                clearStackForValue(value);
-                gAddresseCourante = pressedAddress;
-            }
-            else if (lastValueInStack != cell.cell('option', 'address')) 
-            {
-                gAddresseCourante = lastValueInStack(value);
-            }
-            else {
-                gAddresseCourante = pressedAddress;
-            }
-    		currentValueChanged();
-    	} else if (isPossibleNextAddress(pressedAddress)) {
+        } else if (!cell.hasClass("startingCircle") && isPossibleNextAddress(pressedAddress)) {
     		cell.cell('option', 'value', gCurrentColorValue);
     		cell.addClass("valueCurrentlySelected");
     		gAddresseCourante = pressedAddress;
             pushCurrentValueInStack();
     	}
 
-    	if ($("#divGrille").grid("cellsByCriterias", { value: 0 }).length == 0) {
+    	if ($("#divGrille").grid("cellsByCriterias", { value: 0 }).length == 0 && gCurrentColorValue == 0) {
     		solutionner();
     	}
     }
 
     function currentValueChanged() {
     	$(".valueCurrentlySelected").removeClass("valueCurrentlySelected");
-    	$("#divGrille").grid("cellsByCriterias", { value: gCurrentColorValue }).addClass("valueCurrentlySelected");
+        if (gCurrentColorValue != 0) {
+    	   $("#divGrille").grid("cellsByCriterias", { value: gCurrentColorValue }).addClass("valueCurrentlySelected");
+        }
     }
 
     function preparerPartie() {
@@ -124,9 +141,6 @@ $(function() {
     function isPossibleNextAddress(address) {
         if (gAddresseCourante == null)
             return false;
-
-    	if (address == gAddresseCourante)
-    		return false;
 
     	if (address.row - 1 == gAddresseCourante.row && address.column == gAddresseCourante.column)
     		return true;
