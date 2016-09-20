@@ -32,11 +32,11 @@ $(function() {
     function nouvellePartie() {
     	gCurrentColorValue = 0;
 
-		gStackColor1 = new Array();
-		gStackColor2 = new Array();
-		gStackColor3 = new Array();
-		gStackColor4 = new Array();
-		gStackColor5 = new Array();
+		gStackColor1 = [];
+		gStackColor2 = [];
+		gStackColor3 = [];
+		gStackColor4 = [];
+		gStackColor5 = [];
 
     	var grille = $("#divGrille");
 
@@ -66,20 +66,50 @@ $(function() {
     	if (value == 0 && gCurrentColorValue == 0)
     		return;
 
-    	if (value != 0 && gCurrentColorValue == value && !cell.hasClass("startingCircle")) {
-    		cell.cell('option', 'value', 0);
-    		cell.removeClass("valueCurrentlySelected");
-    		return;
-    	} 
+    	if (value != 0 && gCurrentColorValue != value && !cell.hasClass("startingCircle")) {
+    		var address;
+            do {
+                address = popNextValueInStack(value);
+                var tempCell = $("#divGrille").grid("cellAt", address);
+                if (!tempCell.hasClass("startingCircle")) {
+                    tempCell.cell('option', 'value', 0);
+                    tempCell.removeClass("valueCurrentlySelected");
+                }
+            } while (address != pressedAddress);
+
+            cell.cell('option', 'value', gCurrentColorValue);
+            cell.addClass("valueCurrentlySelected");
+            gAddresseCourante = pressedAddress;
+            return;
+    	}
+
+        if (value != 0 && gCurrentColorValue == value && lastValueInStack(gCurrentColorValue) == pressedAddress && !cell.hasClass("startingCircle")) {
+            cell.cell('option', 'value', 0);
+            cell.removeClass("valueCurrentlySelected");
+            popNextValueInStack(value);
+            gAddresseCourante = lastValueInStack(value);
+            return;
+        }
 
     	if (cell.hasClass("startingCircle")) {
     		gCurrentColorValue = value;
-    		gAddresseCourante = pressedAddress;
+            
+            if (!stackIsEmptyForValue(value) && !isPossibleNextAddress(pressedAddress)) {
+                clearStackForValue(value);
+                gAddresseCourante = pressedAddress;
+                pushCurrentValueInStack();
+            }
+            else if (lastValueInStack != cell.cell('option', 'address')) 
+            {
+                gAddresseCourante = pressedAddress;
+                pushCurrentValueInStack();   
+            }
     		currentValueChanged();
     	} else if (isPossibleNextAddress(pressedAddress)) {
     		cell.cell('option', 'value', gCurrentColorValue);
     		cell.addClass("valueCurrentlySelected");
     		gAddresseCourante = pressedAddress;
+            pushCurrentValueInStack();
     	}
 
     	if ($("#divGrille").grid("cellsByCriterias", { value: 0 }).length == 0) {
@@ -92,9 +122,59 @@ $(function() {
     	$("#divGrille").grid("cellsByCriterias", { value: gCurrentColorValue }).addClass("valueCurrentlySelected");
     }
 
+    function pushCurrentValueInStack() {
+        switch (gCurrentColorValue) {
+            case 1: gStackColor1.push(gAddresseCourante); break;
+            case 2: gStackColor2.push(gAddresseCourante); break;
+            case 3: gStackColor3.push(gAddresseCourante); break;
+            case 4: gStackColor4.push(gAddresseCourante); break;
+            case 5: gStackColor5.push(gAddresseCourante); break;
+        }
+    }
+
+    function popNextValueInStack(value) {
+        switch (value) {
+            case 1: return gStackColor1.pop();
+            case 2: return gStackColor2.pop();
+            case 3: return gStackColor3.pop();
+            case 4: return gStackColor4.pop();
+            case 5: return gStackColor5.pop();
+        }
+    }   
+
+    function lastValueInStack(value) {
+        switch (value) {
+            case 1: return gStackColor1.slice(-1)[0];
+            case 2: return gStackColor2.slice(-1)[0];
+            case 3: return gStackColor3.slice(-1)[0];
+            case 4: return gStackColor4.slice(-1)[0];
+            case 5: return gStackColor5.slice(-1)[0];
+        }
+    }
+
+    function stackIsEmptyForValue(value) {
+        switch (value) {
+            case 1: return gStackColor1.lenght == 0;
+            case 2: return gStackColor2.lenght == 0;
+            case 3: return gStackColor3.lenght == 0;
+            case 4: return gStackColor4.lenght == 0;
+            case 5: return gStackColor5.lenght == 0;
+        }   
+    }
+
+    function clearStackForValue(value) {
+        switch (value) {
+            case 1: return gStackColor1 = [];
+            case 2: return gStackColor2 = [];
+            case 3: return gStackColor3 = [];
+            case 4: return gStackColor4 = [];
+            case 5: return gStackColor5 = [];
+        }
+    }
+
     function preparerPartie() {
     	gNiveau = 1;
-    	gCurrentValue = 0;
+    	gCurrentColorValue = 0;
 
     	var grille = $("#divGrille");
     	
@@ -107,7 +187,10 @@ $(function() {
     }
 
     function isPossibleNextAddress(address) {
-    	if ($("#divGrille").grid("cellAt", address) == gCurrentValue && address != gAddresseCourante)
+        if (gAddresseCourante == null)
+            return false;
+
+    	if ($("#divGrille").grid("cellAt", address) == gCurrentColorValue && address != gAddresseCourante)
     		return false;
 
     	if (address.row - 1 == gAddresseCourante.row && address.column == gAddresseCourante.column)
