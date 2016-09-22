@@ -11,7 +11,25 @@
     margin:-0.5px;
 }
 
-.learningJQ-cell.startingCircle > .colorCircle {
+
+
+.learningJQ-cell.originAddress > .colorCircle {
+    margin-left: 3px;
+    margin-top: 3px;
+    width: 42px;
+    height: 42px;
+    position: absolute;
+}
+
+.learningJQ-cell.startCircleWithPathBottom > .colorCircle {
+    margin-left: 3px;
+    margin-top: 3px;
+    width: 42px;
+    height: 47px;
+    position: absolute;
+}
+
+.learningJQ-cell.startCircleWithPathTop > .colorCircle {
     margin-left: 3px;
     margin-top: -1px;
     width: 42px;
@@ -19,27 +37,55 @@
     position: absolute;
 }
 
-.learningJQ-cell.startingCircle.cellColor1 > .colorCircle {
-    content:url("../images/Depart/OrangeDepart.png");
+.learningJQ-cell.startCircleWithPathRight > .colorCircle {
+    margin-left: 3px;
+    margin-top: 3px;
+    width: 47px;
+    height: 42px;
+    position: absolute;
 }
 
-.learningJQ-cell.startingCircle.cellColor2 > .colorCircle {
-    content:url("../images/Depart/BleuDepart.png");   
+.learningJQ-cell.startCircleWithPathLeft > .colorCircle {
+    margin-left: -1px;
+    margin-top: 3px;
+    width: 47px;
+    height: 42px;
+    position: absolute;
 }
 
-.learningJQ-cell.startingCircle.cellColor3 > .colorCircle {
-    content:url("../images/Depart/Haut/RougeDepart.png");
+.learningJQ-cell.leftBottomLine > .colorCircle {
+    margin-left: -1px;
+    margin-top: 11px;
+    width: 38px;
+    height: 38px;
+    position: absolute;
 }
 
-.learningJQ-cell.startingCircle.cellColor4 > .colorCircle {
-    content:url("../images/Depart/JauneDepart.png");
+.learningJQ-cell.rightBottomLine > .colorCircle {
+    margin-left: 11px;
+    margin-top: 11px;
+    width: 38px;
+    height: 38px;
+    position: absolute;
 }
 
-.learningJQ-cell.startingCircle.cellColor5 > .colorCircle {
-    content:url("../images/Depart/VertDepart.png");
+.learningJQ-cell.leftTopLine > .colorCircle {
+    margin-left: -1px;
+    margin-top: -1px;
+    width: 38px;
+    height: 38px;
+    position: absolute;
 }
 
-.learningJQ-cell > .colorCircle {
+.learningJQ-cell.rightTopLine > .colorCircle {
+    margin-left: 11px;
+    margin-top: -1px;
+    width: 38px;
+    height: 38px;
+    position: absolute;
+}
+
+.learningJQ-cell.verticalLine > .colorCircle {
     margin-left: 11px;
     margin-top: -1px;
     width: 26px;
@@ -47,9 +93,256 @@
     position: absolute;
 }
 
-.learningJQ-cell.cellColor3 > .colorCircle {
+.learningJQ-cell.horizontalLine > .colorCircle {
+    margin-left: -1px;
+    margin-top: 11px;
+    width: 50px;
+    height: 26px;
+    position: absolute;
+}
+
+
+
+.learningJQ-cell.originAddress.cellColor1 > .colorCircle {
+    content:url("../images/Depart/OrangeDepart.png");
+}
+
+.learningJQ-cell.originAddress.cellColor2 > .colorCircle {
+    content:url("../images/Depart/BleuDepart.png");   
+}
+
+.learningJQ-cell.originAddress.cellColor3 > .colorCircle {
+    content:url("../images/Depart/RougeDepart.png");
+}
+
+.learningJQ-cell.originAddress.cellColor4 > .colorCircle {
+    content:url("../images/Depart/JauneDepart.png");
+}
+
+.learningJQ-cell.originAddress.cellColor5 > .colorCircle {
+    content:url("../images/Depart/VertDepart.png");
+}
+
+
+
+.learningJQ-cell.startCircleWithPathBottom.cellColor1 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Bas/OrangeDepartAvecLigneBas.png");
+}
+
+.learningJQ-cell.startCircleWithPathBottom.cellColor2 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Bas/BleuDepartAvecLigneBas.png");   
+}
+
+.learningJQ-cell.startCircleWithPathBottom.cellColor3 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Bas/RougeDepartAvecLigneBas.png");
+}
+
+.learningJQ-cell.startCircleWithPathBottom.cellColor4 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Bas/JauneDepartAvecLigneBas.png");
+}
+
+.learningJQ-cell.startCircleWithPathBottom.cellColor5 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Bas/VertDepartAvecLigneBas.png");
+}
+
+
+
+.learningJQ-cell.startCircleWithPathTop.cellColor1 > .colorCircle {
+    content:url("../images/DepartAvecLigne/haut/OrangeDepartAvecLigneHaut.png");
+}
+
+.learningJQ-cell.startCircleWithPathTop.cellColor2 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Haut/BleuDepartAvecLigneHaut.png");   
+}
+
+.learningJQ-cell.startCircleWithPathTop.cellColor3 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Haut/RougeDepartAvecLigneHaut.png");
+}
+
+.learningJQ-cell.startCircleWithPathTop.cellColor4 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Haut/JauneDepartAvecLigneHaut.png");
+}
+
+.learningJQ-cell.startCircleWithPathTop.cellColor5 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Haut/VertDepartAvecLigneHaut.png");
+}
+
+
+
+.learningJQ-cell.startCircleWithPathLeft.cellColor1 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Gauche/OrangeDepartAvecLigneGauche.png");
+}
+
+.learningJQ-cell.startCircleWithPathLeft.cellColor2 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Gauche/BleuDepartAvecLigneGauche.png");   
+}
+
+.learningJQ-cell.startCircleWithPathLeft.cellColor3 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Gauche/RougeDepartAvecLigneGauche.png");
+}
+
+.learningJQ-cell.startCircleWithPathLeft.cellColor4 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Gauche/JauneDepartAvecLigneGauche.png");
+}
+
+.learningJQ-cell.startCircleWithPathLeft.cellColor5 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Gaucge/VertDepartAvecLigneGauche.png");
+}
+
+
+
+.learningJQ-cell.startCircleWithPathRight.cellColor1 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Droite/OrangeDepartAvecLigneDroite.png");
+}
+
+.learningJQ-cell.startCircleWithPathRight.cellColor2 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Droite/BleuDepartAvecLigneDroite.png");   
+}
+
+.learningJQ-cell.startCircleWithPathRight.cellColor3 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Droite/RougeDepartAvecLigneDroite.png");
+}
+
+.learningJQ-cell.startCircleWithPathRight.cellColor4 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Droite/JauneDepartAvecLigneDroite.png");
+}
+
+.learningJQ-cell.startCircleWithPathRight.cellColor5 > .colorCircle {
+    content:url("../images/DepartAvecLigne/Droite/VertDepartAvecLigneDroite.png");
+}
+
+
+.learningJQ-cell.rightTopLine.cellColor1 > .colorCircle {
+    content:url("../images/Coin/DroiteHaut/OrangeCoinDroiteHaut.png");
+}
+
+.learningJQ-cell.rightTopLine.cellColor2 > .colorCircle {
+    content:url("../images/Coin/DroiteHaut/BleuCoinDroiteHaut.png");
+}
+
+.learningJQ-cell.rightTopLine.cellColor3 > .colorCircle {
+    content:url("../images/Coin/DroiteHaut/RougeCoinDroiteHaut.png");
+}
+
+.learningJQ-cell.rightTopLine.cellColor4 > .colorCircle {
+    content:url("../images/Coin/DroiteHaut/JauneCoinDroiteHaut.png");
+}
+
+.learningJQ-cell.rightTopLine.cellColor5 > .colorCircle {
+    content:url("../images/Coin/DroiteHaut/VertCoinDroiteHaut.png");
+}
+
+
+
+.learningJQ-cell.rightBottomLine.cellColor1 > .colorCircle {
+    content:url("../images/Coin/DroiteBas/OrangeCoinDroiteBas.png");
+}
+
+.learningJQ-cell.rightBottomLine.cellColor2 > .colorCircle {
+    content:url("../images/Coin/DroiteBas/BleuCoinDroiteBas.png");
+}
+
+.learningJQ-cell.rightBottomLine.cellColor3 > .colorCircle {
+    content:url("../images/Coin/DroiteBas/RougeCoinDroiteBas.png");
+}
+
+.learningJQ-cell.rightBottomLine.cellColor4 > .colorCircle {
+    content:url("../images/Coin/DroiteBas/JauneCoinDroiteBas.png");
+}
+
+.learningJQ-cell.rightBottomLine.cellColor5 > .colorCircle {
+    content:url("../images/Coin/DroiteBas/VertCoinDroiteBas.png");
+}
+
+
+
+.learningJQ-cell.leftTopLine.cellColor1 > .colorCircle {
+    content:url("../images/Coin/GaucheHaut/OrangeCoinGaucheHaut.png");
+}
+
+.learningJQ-cell.leftTopLine.cellColor2 > .colorCircle {
+    content:url("../images/Coin/GaucheHaut/BleuCoinGaucheHaut.png");
+}
+
+.learningJQ-cell.leftTopLine.cellColor3 > .colorCircle {
+    content:url("../images/Coin/GaucheHaut/RougeCoinGaucheHaut.png");
+}
+
+.learningJQ-cell.leftTopLine.cellColor4 > .colorCircle {
+    content:url("../images/Coin/GaucheHaut/JauneCoinGaucheHaut.png");
+}
+
+.learningJQ-cell.leftTopLine.cellColor5 > .colorCircle {
+    content:url("../images/Coin/GaucheHaut/VertCoinGaucheHaut.png");
+}
+
+
+
+.learningJQ-cell.leftBottomLine.cellColor1 > .colorCircle {
+    content:url("../images/Coin/GaucheBas/OrangeCoinGaucheBas.png");
+}
+
+.learningJQ-cell.leftBottomLine.cellColor2 > .colorCircle {
+    content:url("../images/Coin/GaucheBas/BleuCoinGaucheBas.png");
+}
+
+.learningJQ-cell.leftBottomLine.cellColor3 > .colorCircle {
+    content:url("../images/Coin/GaucheBas/RougeCoinGaucheBas.png");
+}
+
+.learningJQ-cell.leftBottomLine.cellColor4 > .colorCircle {
+    content:url("../images/Coin/GaucheBas/JauneCoinGaucheBas.png");
+}
+
+.learningJQ-cell.leftBottomLine.cellColor5 > .colorCircle {
+    content:url("../images/Coin/GaucheBas/VertCoinDroiteBas.png");
+}
+
+
+
+.learningJQ-cell.verticalLine.cellColor1 > .colorCircle {
+    content:url("../images/Vertical/OrangeVertical.png");
+}
+
+.learningJQ-cell.verticalLine.cellColor2 > .colorCircle {
+    content:url("../images/Vertical/BleuVertical.png");
+}
+
+.learningJQ-cell.verticalLine.cellColor3 > .colorCircle {
     content:url("../images/Vertical/RougeVertical.png");
 }
+
+.learningJQ-cell.verticalLine.cellColor4 > .colorCircle {
+    content:url("../images/Vertical/JauneVertical.png");
+}
+
+.learningJQ-cell.verticalLine.cellColor5 > .colorCircle {
+    content:url("../images/Vertical/VertVertical.png");
+}
+
+
+
+.learningJQ-cell.horizontalLine.cellColor1 > .colorCircle {
+    content:url("../images/Horizontal/OrangeHorizontal.png");
+}
+
+.learningJQ-cell.horizontalLine.cellColor2 > .colorCircle {
+    content:url("../images/Horizontal/BleuHorizontal.png");
+}
+
+.learningJQ-cell.horizontalLine.cellColor3 > .colorCircle {
+    content:url("../images/Horizontal/RougeHorizontal.png");
+}
+
+.learningJQ-cell.horizontalLine.cellColor4 > .colorCircle {
+    content:url("../images/Horizontal/JauneHorizontal.png");
+}
+
+.learningJQ-cell.horizontalLine.cellColor5 > .colorCircle {
+    content:url("../images/Horizontal/VertHorizontal.png");
+}
+
+
 
 .valueCurrentlySelected {
     background-color: rgba(246, 255, 255, 0.3);

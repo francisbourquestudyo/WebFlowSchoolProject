@@ -28,6 +28,26 @@ function pushCurrentValueInStack() {
         }
     }
 
+    function secondLastValueInStack(value) {
+        switch (value) {
+            case 1: return gStackColor1.slice(-2)[0];
+            case 2: return gStackColor2.slice(-2)[0];
+            case 3: return gStackColor3.slice(-2)[0];
+            case 4: return gStackColor4.slice(-2)[0];
+            case 5: return gStackColor5.slice(-2)[0];
+        }   
+    }
+
+    function thirdLastValueInStack(value) {
+        switch (value) {
+            case 1: return gStackColor1.slice(-3)[0];
+            case 2: return gStackColor2.slice(-3)[0];
+            case 3: return gStackColor3.slice(-3)[0];
+            case 4: return gStackColor4.slice(-3)[0];
+            case 5: return gStackColor5.slice(-3)[0];
+        }   
+    }
+
     function stackIsEmptyForValue(value) {
         switch (value) {
             case 1: return gStackColor1.lenght == 0;
