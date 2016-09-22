@@ -12,44 +12,43 @@
 }
 
 .learningJQ-cell.startingCircle > .colorCircle {
-    width: 36px;
-    height: 36px;
-    border-radius: 18px;
-    margin: auto;
-    margin-top: 6.5px;
+    margin-left: 3px;
+    margin-top: -1px;
+    width: 42px;
+    height: 47px;
+    position: absolute;
+}
+
+.learningJQ-cell.startingCircle.cellColor1 > .colorCircle {
+    content:url("../images/Depart/OrangeDepart.png");
+}
+
+.learningJQ-cell.startingCircle.cellColor2 > .colorCircle {
+    content:url("../images/Depart/BleuDepart.png");   
+}
+
+.learningJQ-cell.startingCircle.cellColor3 > .colorCircle {
+    content:url("../images/Depart/Haut/RougeDepart.png");
+}
+
+.learningJQ-cell.startingCircle.cellColor4 > .colorCircle {
+    content:url("../images/Depart/JauneDepart.png");
+}
+
+.learningJQ-cell.startingCircle.cellColor5 > .colorCircle {
+    content:url("../images/Depart/VertDepart.png");
 }
 
 .learningJQ-cell > .colorCircle {
-    width: 20px;
-    height: 20px;
-    border-radius: 10px;
-    margin: auto;
-    margin-top: 14.5px;
-}
-
-.learningJQ-cell.cellColor1 > .colorCircle {
-    background-color: orange;
-}
-
-.learningJQ-cell.cellColor2 > .colorCircle {
-    background-color: blue;
+    margin-left: 11px;
+    margin-top: -1px;
+    width: 26px;
+    height: 50px;
+    position: absolute;
 }
 
 .learningJQ-cell.cellColor3 > .colorCircle {
-    background-color: red;
-}
-
-.learningJQ-cell.cellColor4 > .colorCircle {
-    background-color: yellow;
-}
-
-.learningJQ-cell.cellColor5 > .colorCircle {
-    background-color: green;    
-}
-
-.learningJQ-grid > .learningJQ-cell {
-    width:38px;
-    height:38px;
+    content:url("../images/Vertical/RougeVertical.png");
 }
 
 .valueCurrentlySelected {

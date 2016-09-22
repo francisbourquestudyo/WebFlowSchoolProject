@@ -133,7 +133,7 @@ $(function() {
 
     	var grille = $("#divGrille");
     	
-    	$("#divGrille").grid("cells").cell().append('<div class="colorCircle"></div>');
+    	$("#divGrille").grid("cells").cell().append('<img class="colorCircle" src=""></img>');
 
     	nouvellePartie();
     }
