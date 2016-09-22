@@ -50,11 +50,11 @@ function pushCurrentValueInStack() {
 
     function stackIsEmptyForValue(value) {
         switch (value) {
-            case 1: return gStackColor1.lenght == 0;
-            case 2: return gStackColor2.lenght == 0;
-            case 3: return gStackColor3.lenght == 0;
-            case 4: return gStackColor4.lenght == 0;
-            case 5: return gStackColor5.lenght == 0;
+            case 1: return gStackColor1.length == 0;
+            case 2: return gStackColor2.length == 0;
+            case 3: return gStackColor3.length == 0;
+            case 4: return gStackColor4.length == 0;
+            case 5: return gStackColor5.length == 0;
         }   
     }
 
