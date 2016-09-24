@@ -1,0 +1,59 @@
+/* This is the css for all the orange path image. */
+
+
+
+/* Start circle */
+.learningJQ-cell.originAddress.cellColor1 > .colorCircle {
+    content:url("../../images/Depart/OrangeDepart.png");
+}
+
+/* Start circle with bottom line */
+.learningJQ-cell.startCircleWithPathBottom.cellColor1 > .colorCircle {
+    content:url("../../images/DepartAvecLigne/Bas/OrangeDepartAvecLigneBas.png");
+}
+
+/* Start circle with top line */
+.learningJQ-cell.startCircleWithPathTop.cellColor1 > .colorCircle {
+    content:url("../../images/DepartAvecLigne/Haut/OrangeDepartAvecLigneHaut.png");
+}
+
+/* Start circle with left line */
+.learningJQ-cell.startCircleWithPathLeft.cellColor1 > .colorCircle {
+    content:url("../../images/DepartAvecLigne/Gauche/OrangeDepartAvecLigneGauche.png");
+}
+
+/* Start circle with right line */
+.learningJQ-cell.startCircleWithPathRight.cellColor1 > .colorCircle {
+    content:url("../../images/DepartAvecLigne/Droite/OrangeDepartAvecLigneDroite.png");
+}
+
+/* Right to top corner line */
+.learningJQ-cell.rightTopCornerLine.cellColor1 > .colorCircle {
+    content:url("../../images/Coin/DroiteHaut/OrangeCoinDroiteHaut.png");
+}
+
+/* Right to bottom corner line */
+.learningJQ-cell.rightBottomCornerLine.cellColor1 > .colorCircle {
+    content:url("../../images/Coin/DroiteBas/OrangeCoinDroiteBas.png");
+}
+
+/* Left to top corner line */
+.learningJQ-cell.leftTopCornerLine.cellColor1 > .colorCircle {
+    content:url("../../images/Coin/GaucheHaut/OrangeCoinGaucheHaut.png");
+}
+
+/* Left to bottom corner line */
+.learningJQ-cell.leftBottomCornerLine.cellColor1 > .colorCircle {
+    content:url("../../images/Coin/GaucheBas/OrangeCoinGaucheBas.png");
+}
+
+/* Vertical line */
+.learningJQ-cell.verticalLine.cellColor1 > .colorCircle {
+    content:url("../../images/Vertical/OrangeVertical.png");
+}
+
+/* Horizontal line */
+.learningJQ-cell.horizontalLine.cellColor1 > .colorCircle {
+    content:url("../../images/Horizontal/OrangeHorizontal.png");
+}
+

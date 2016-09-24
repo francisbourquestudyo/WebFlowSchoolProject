@@ -1,0 +1,27 @@
+/* Background for cell when color is selected */
+
+
+/* Orange */
+.valueCurrentlySelected.cellColor1 {
+    background-color: rgba(255, 165, 0, 0.3);
+}
+
+/* Blue */
+.valueCurrentlySelected.cellColor2 {
+    background-color: rgba(0, 0, 255, 0.3);
+}
+
+/* Red */
+.valueCurrentlySelected.cellColor3 {
+    background-color: rgba(255, 0, 0, 0.3);
+}
+
+/* Yellow */
+.valueCurrentlySelected.cellColor4 {
+    background-color: rgba(255, 255, 0, 0.3);
+}
+
+/* Green */
+.valueCurrentlySelected.cellColor5 {
+    background-color: rgba(0, 135, 0, 0.3);
+}

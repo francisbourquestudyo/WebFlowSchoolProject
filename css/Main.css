@@ -1,0 +1,14 @@
+.learningJQ-grid {
+    width: auto;
+}
+.learningJQ-cell {
+	background-color: black; 
+	border:solid 1px orange;
+	font-size:16px;
+    font-weight:bold;
+    margin:-0.5px;
+}
+
+span {
+	color: white;
+}
