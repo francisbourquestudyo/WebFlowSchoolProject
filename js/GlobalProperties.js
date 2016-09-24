@@ -1,6 +1,13 @@
 var gNiveau;
+
 var gCurrentColorValue;
+var gPreviousColor;
+
+var gNumberOfMoves;
+
 var gAddresseCourante;
+
+var gFinPartie;
 
 var gStackColor1;
 var gStackColor2;
