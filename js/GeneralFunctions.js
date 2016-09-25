@@ -1,7 +1,7 @@
 function solutionner() {
 	var finPartie = true;
     $("#divGrille").grid("cells").each(function(i) {
-        if ($(this).cell("option", "value") != gNiveau1Solution[i]) {
+        if ($(this).cell("option", "value") != gNiveau5Solution[i]) {
             finPartie = false;
         }
     });

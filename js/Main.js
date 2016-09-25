@@ -34,7 +34,7 @@ $(function() {
 
         $(".originAddress").removeClass("originAddress");
 
-        $.each(gNiveau1Depart, function(i, value) {
+        $.each(gNiveau5Depart, function(i, value) {
             var cell = grille.grid("cellAt", value.addresse);
             cell.cell("option", "value", value.value);
             cell.addClass("originAddress");

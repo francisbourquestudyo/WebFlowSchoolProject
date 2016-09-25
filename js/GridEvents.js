@@ -92,7 +92,10 @@ function traiterHoverIn(e, info) {
         updateCurrentPath();
         updateCellsFillPourcentage();
     } else if (isPossibleNextAddress(pressedAddress) && (!cell.hasClass("originAddress") || value == gCurrentColorValue)) {
-		cell.cell('option', 'value', gCurrentColorValue);
+		if ($("#divGrille").grid("cellAt", lastValueInStack(gCurrentColorValue)).hasClass("originAddress") && secondLastValueInStack(gCurrentColorValue) != lastValueInStack(gCurrentColorValue))
+            return;
+
+        cell.cell('option', 'value', gCurrentColorValue);
 		cell.addClass("valueCurrentlySelected");
 
 		gAddresseCourante = pressedAddress;
