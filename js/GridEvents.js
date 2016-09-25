@@ -75,23 +75,30 @@ function traiterHoverIn(e, info) {
 
         cell.cell('option', 'value', gCurrentColorValue);
         cell.addClass("valueCurrentlySelected");
+        
         gAddresseCourante = pressedAddress;
         pushCurrentValueInStack();
+        
         updateCurrentPath();
-        return;
+        updateCellsFillPourcentage();
 	} else if (value != 0 && gCurrentColorValue == value && isPossibleNextAddress(pressedAddress) &&
          (!cell.hasClass("originAddress") || cell.hasClass("originAddress") && stackContainsAddress(gCurrentColorValue, pressedAddress))) {
         var tempCell = $("#divGrille").grid("cellAt", popNextValueInStack(value));
         tempCell.cell('option', 'value', 0);
         tempCell.removeClass("valueCurrentlySelected leftTopCornerLine leftBottomCornerLine rightTopCornerLine rightBottomCornerLine verticalLine horizontalLine startCircleWithPathBottom startCircleWithPathTop startCircleWithPathLeft startCircleWithPathRight");
+        
         gAddresseCourante = lastValueInStack(value);
+        
         updateCurrentPath();
-        return;
+        updateCellsFillPourcentage();
     } else if (isPossibleNextAddress(pressedAddress) && (!cell.hasClass("originAddress") || value == gCurrentColorValue)) {
 		cell.cell('option', 'value', gCurrentColorValue);
 		cell.addClass("valueCurrentlySelected");
+
 		gAddresseCourante = pressedAddress;
         pushCurrentValueInStack();
+
         updateCurrentPath();
+        updateCellsFillPourcentage();
 	}
 }
