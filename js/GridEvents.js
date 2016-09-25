@@ -28,7 +28,7 @@ function traiterClick(e, info) {
                     tempCell.removeClass("valueCurrentlySelected leftTopCornerLine leftBottomCornerLine rightTopCornerLine rightBottomCornerLine verticalLine horizontalLine startCircleWithPathBottom startCircleWithPathTop startCircleWithPathLeft startCircleWithPathRight");
                 }
                 else {
-                    tempCell.removeClass("startCircleWithPathBottom, startCircleWithPathRight startCircleWithPathTop startCircleWithPathLeft");
+                    tempCell.removeClass("startCircleWithPathBottom startCircleWithPathRight startCircleWithPathTop startCircleWithPathLeft");
                 }
             } while (!stackIsEmptyForValue(value));
             gAddresseCourante = pressedAddress;
@@ -67,7 +67,7 @@ function traiterHoverIn(e, info) {
                 tempCell.removeClass("valueCurrentlySelected leftTopCornerLine leftBottomCornerLine rightTopCornerLine rightBottomCornerLine verticalLine horizontalLine startCircleWithPathBottom startCircleWithPathTop startCircleWithPathLeft startCircleWithPathRight");
             }
             else {
-                tempCell.removeClass("startCircleWithPathBottom, startCircleWithPathRight startCircleWithPathTop startCircleWithPathLeft");
+                tempCell.removeClass("startCircleWithPathBottom startCircleWithPathRight startCircleWithPathTop startCircleWithPathLeft");
             }
         } while (address != pressedAddress);
 
