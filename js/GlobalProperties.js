@@ -1,4 +1,6 @@
 var gNiveau;
+var gCurrentStartingCircle;
+var gCurrentSolution;
 
 var gCurrentColorValue;
 var gPreviousColor;
