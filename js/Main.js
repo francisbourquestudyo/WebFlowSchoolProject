@@ -20,24 +20,30 @@ $(function() {
     }
 
     function nouvellePartie() {
-    	gCurrentColorValue = 0;
+        gCurrentColorValue = 0;
 
-		gStackColor1 = [];
-		gStackColor2 = [];
-		gStackColor3 = [];
-		gStackColor4 = [];
-		gStackColor5 = [];
+        gStackColor1 = [];
+        gStackColor2 = [];
+        gStackColor3 = [];
+        gStackColor4 = [];
+        gStackColor5 = [];
 
-    	var grille = $("#divGrille");
+        var grille = $("#divGrille");
 
-    	grille.grid("cells").cell('option', 'value', 0).removeClass("valueCurrentlySelected leftTopCornerLine leftBottomCornerLine rightTopCornerLine rightBottomCornerLine verticalLine horizontalLine startCircleWithPathBottom startCircleWithPathTop startCircleWithPathLeft startCircleWithPathRight");
+        grille.grid("cells").cell('option', 'value', 0).removeClass("valueCurrentlySelected leftTopCornerLine leftBottomCornerLine rightTopCornerLine rightBottomCornerLine verticalLine horizontalLine startCircleWithPathBottom startCircleWithPathTop startCircleWithPathLeft startCircleWithPathRight");
 
-    	$(".originAddress").removeClass("originAddress");
+        $(".originAddress").removeClass("originAddress");
 
-    	$.each(gNiveau1Depart, function(i, value) {
-    		var cell = grille.grid("cellAt", value.addresse);
-    		cell.cell("option", "value", value.value);
-    		cell.addClass("originAddress");
-    	});
+        $.each(gNiveau1Depart, function(i, value) {
+            var cell = grille.grid("cellAt", value.addresse);
+            cell.cell("option", "value", value.value);
+            cell.addClass("originAddress");
+        });
+
+        
+        var numberOfStartingCells = $(".originAddress").length;
+        var numberOfCells = $("#divGrille").grid("cells").length;
+        gNumberCellsToFill = numberOfCells - numberOfStartingCells;
+        updateCellsFillPourcentage();
     }
 });

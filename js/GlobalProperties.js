@@ -3,6 +3,7 @@ var gNiveau;
 var gCurrentColorValue;
 var gPreviousColor;
 
+var gNumberCellsToFill;
 var gNumberOfMoves;
 
 var gAddresseCourante;

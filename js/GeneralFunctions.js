@@ -25,6 +25,12 @@ function currentValueChanged() {
     }
 }
 
+function updateCellsFillPourcentage() {
+    var emptyCells = $("#divGrille").grid("cellsByCriterias", { value: 0 });
+    var pourcentage = Math.floor((gNumberCellsToFill - emptyCells.length) / gNumberCellsToFill * 100)
+    $("#pourcentageFill").text(pourcentage + "%");
+}
+
 function isPossibleNextAddress(address) {
 	if (address.row - 1 == gAddresseCourante.row && address.column == gAddresseCourante.column)
 		return true;

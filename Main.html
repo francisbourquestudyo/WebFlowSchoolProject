@@ -30,11 +30,15 @@
         <script type="text/javascript" src="js/Main.js"></script>
      </head>
      <body style="background-color:black;">
-        <label id="niveauLabel" style="margin-left:10px; color:white;">Niveau 1</label>
-        <div id="divGrille" class="learningJQ-grid" data-row-count="10" data-column-count="10" data-css-class="grille" data-cell-class-from-value-prefix="cellColor", data-display-type="none"></div>
-        <br style="clear:both;" /><br />
-        <input type="button" id="btnNouvellePartie" value="Nouvelle partie">
-        <span>Number of moves</span>
-        <span id="spanMovesNumber"></span>
+        <div id="wrapper">
+            <label id="niveauLabel" style="margin-left:10px; color:white;">Niveau 1</label>
+            <div id="divGrille" class="learningJQ-grid" data-row-count="10" data-column-count="10" data-css-class="grille" data-cell-class-from-value-prefix="cellColor", data-display-type="none"></div>
+            <br style="clear:both;" /><br />
+            <input type="button" id="btnNouvellePartie" value="Nouvelle partie">
+            <span>Number of moves</span>
+            <span id="spanMovesNumber"></span>
+            <br style="clear:both;" /><br />
+            <span id="pourcentageFill"></span>
+        </div>
     </body>
 </html>
