@@ -2,23 +2,39 @@
 <html lang="fr">
     <head>
         <meta charset="utf-8">
-        <title>Ex03</title>
+        <title>Flow</title>
 
         <link rel="stylesheet" type="text/css" href="js/jquery/css/jquery-ui.min.css" />
         <link rel="stylesheet" type="text/css" href="js/jquery/learningJQ/css/jquery-learningJQ-grid-cell-displayAdapter.css" />
-        <link rel="stylesheet" type="text/css" href="css/TP1.css">
+        
+        <link rel="stylesheet" type="text/css" href="css/Main.css">
+        <link rel="stylesheet" type="text/css" href="css/Path.css">
+        <link rel="stylesheet" type="text/css" href="css/CurrentValue.css">
+
+        <link rel="stylesheet" type="text/css" href="css/Content url/Blue.css">
+        <link rel="stylesheet" type="text/css" href="css/Content url/Green.css">
+        <link rel="stylesheet" type="text/css" href="css/Content url/Orange.css">
+        <link rel="stylesheet" type="text/css" href="css/Content url/Red.css">
+        <link rel="stylesheet" type="text/css" href="css/Content url/Yellow.css">
 
         <script type="text/javascript" src="js/jquery/jquery.min.js"></script>
         <script type="text/javascript" src="js/jquery/jquery-ui.min.js"></script>
         <script type="text/javascript" src="js/jquery/learningJQ/jquery-learningJQ-grid-cell-displayAdapter.js"></script>
+
         <script type="text/javascript" src="js/GlobalProperties.js"></script>
         <script type="text/javascript" src="js/Stack.js"></script>
-        <script type="text/javascript" src="js/TP1.js"></script>
+        <script type="text/javascript" src="js/Niveaux/Niveau1.js"></script>
+        <script type="text/javascript" src="js/GeneralFunctions.js"></script>
+        <script type="text/javascript" src="js/Path.js"></script>
+        <script type="text/javascript" src="js/GridEvents.js"></script>
+        <script type="text/javascript" src="js/Main.js"></script>
      </head>
      <body style="background-color:black;">
         <label id="niveauLabel" style="margin-left:10px; color:white;">Niveau 1</label>
         <div id="divGrille" class="learningJQ-grid" data-row-count="10" data-column-count="10" data-css-class="grille" data-cell-class-from-value-prefix="cellColor", data-display-type="none"></div>
         <br style="clear:both;" /><br />
         <input type="button" id="btnNouvellePartie" value="Nouvelle partie">
+        <span>Number of moves</span>
+        <span id="spanMovesNumber"></span>
     </body>
 </html>
