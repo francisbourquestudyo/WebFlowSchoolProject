@@ -51,6 +51,12 @@ function solutionner() {
         }
     });
 
+    for (var i = 1; i < 6; i++) {
+        if (!stackIsEmptyForValue(i) && !($("#divGrille").grid("cellAt", lastValueInStack(i)).hasClass("originAddress"))) {
+            finPartie = false;
+        }
+    }
+
     if (finPartie) {
         gFinPartie = true;
         alert("Bravo!!!");
@@ -76,12 +82,41 @@ function updateCellsFillPourcentage() {
     $("#pourcentageFill").text(pourcentage + "%");
 }
 
-function currentLevelChanged() {
+function levelButtonPressed() {
     gNiveau = parseInt($(this).val());
 
     $(".currentLevel").removeClass("currentLevel");
     $(this).addClass("currentLevel");
 
+    currentLevelDidChanged()
+
+}
+
+function nextLevelButtonPressed() {
+    gNiveau++;
+
+    if (gNiveau > 5)
+        gNiveau = 1;
+
+    $(".currentLevel").removeClass("currentLevel");
+    $("#buttonLevel" + gNiveau).addClass("currentLevel");
+
+    currentLevelDidChanged();
+}
+
+function previousLevelButtonPressed() {
+    gNiveau--;
+
+    if (gNiveau < 1)
+        gNiveau = 5;
+
+    $(".currentLevel").removeClass("currentLevel");
+    $("#buttonLevel" + gNiveau).addClass("currentLevel");
+
+    currentLevelDidChanged();
+}
+
+function currentLevelDidChanged() {
     switch(gNiveau) {
         case 1:
             gCurrentStartingCircle = gNiveau1Depart;

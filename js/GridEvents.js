@@ -42,9 +42,7 @@ function traiterClick(e, info) {
         currentValueChanged();
     }
 
-    if ($(".cellColor0").length == 0) {
-        solutionner();
-    }
+    solutionner();
 }
 
 function traiterHoverIn(e, info) {
