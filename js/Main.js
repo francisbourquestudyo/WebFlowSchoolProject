@@ -1,5 +1,5 @@
 $(function() {
-	$("#btnNouvellePartie").on('click', nouvellePartie);
+	$("#newGameButton").on('click', nouvellePartie);
     $(".levelButton").on('click', levelButtonPressed);
     $("#nextLevelButton").on('click', nextLevelButtonPressed);
     $("#previousLevelButton").on('click', previousLevelButtonPressed);

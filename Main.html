@@ -34,26 +34,30 @@
         <script type="text/javascript" src="js/GridEvents.js"></script>
         <script type="text/javascript" src="js/Main.js"></script>
      </head>
-     <body style="background-color:black;">
-        <div id="wrapper">
-            <label id="levelLabel" style="margin-left:10px; color:white;"></label>
-            <div id="divGrille" class="learningJQ-grid" data-row-count="10" data-column-count="10" data-css-class="grille" data-cell-class-from-value-prefix="cellColor", data-display-type="none"></div>
-            <br style="clear:both;" /><br />
-            <input type="button" id="btnNouvellePartie" value="Nouvelle partie">
-            <span>Number of moves</span>
-            <span id="spanMovesNumber"></span>
-            <br style="clear:both;" /><br />
-            <span id="pourcentageFill"></span>
-            <div>
-                <button id="buttonLevel1" class="levelButton" value="1">Niveau 1</button>
-                <button id="buttonLevel2" class="levelButton" value="2">Niveau 2</button>
-                <button id="buttonLevel3" class="levelButton" value="3">Niveau 3</button>
-                <button id="buttonLevel4" class="levelButton" value="4">Niveau 4</button>
-                <button id="buttonLevel5" class="levelButton" value="5">Niveau 5</button>
+     <body>
+        <div id="content">
+            <div id="divTitle">
+                <span id="titleSpan">Flow</span><br/>
+                <span id="nameSpan">Par Francis Bourque Gr.1011</span>
             </div>
-            <div>
-                <button id="previousLevelButton">Niveau précédent</button>
-                <button id="nextLevelButton">Niveau suivant</button>
+            <div id="divInfos">
+                <span id="currentLevelSpan"></span><br/><br/>
+                <span id="movesNumberSpan"></span>
+                <span id="pourcentageFillSpan"></span><br/>
+            </div>
+            <div id="divGrille" class="learningJQ-grid" data-row-count="10" data-column-count="10" data-css-class="grille" data-cell-class-from-value-prefix="cellColor", data-display-type="none"></div>
+            <br/><br/>
+            <div id="divNewGame">
+                <button id="previousLevelButton" class="newGameButtons">&#8592;</button>
+                <button id="newGameButton" class="newGameButtons">&#8635;</button>
+                <button id="nextLevelButton" class="newGameButtons">&#8594;</button>
+            </div>
+            <div id="divLevelButtons">
+                <button id="buttonLevel1" class="levelButton" value="1">1</button>
+                <button id="buttonLevel2" class="levelButton" value="2">2</button>
+                <button id="buttonLevel3" class="levelButton" value="3">3</button>
+                <button id="buttonLevel4" class="levelButton" value="4">4</button>
+                <button id="buttonLevel5" class="levelButton" value="5">5</button>
             </div>
         </div>
     </body>

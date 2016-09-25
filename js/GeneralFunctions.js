@@ -14,8 +14,8 @@ function nouvellePartie() {
     gPreviousColor = 0;
 
     gNumberOfMoves = 0;
-    $("#spanMovesNumber").text(String(gNumberOfMoves));
-    $("#levelLabel").text("Niveau " + gNiveau);
+    $("#movesNumberSpan").text("Coups effectués : " + gNumberOfMoves);
+    $("#currentLevelSpan").text("Niveau " + gNiveau);
     
     gFinPartie = false;
 
@@ -72,14 +72,14 @@ function currentValueChanged() {
     if (gCurrentColorValue != 0 && (gPreviousColor == 0 || gPreviousColor != gCurrentColorValue)) {
     	gNumberOfMoves++;
     	gPreviousColor = gCurrentColorValue;
-    	$("#spanMovesNumber").text(String(gNumberOfMoves));
+    	$("#movesNumberSpan").text("Coups effectués : " + gNumberOfMoves);
     }
 }
 
 function updateCellsFillPourcentage() {
     var emptyCells = $("#divGrille").grid("cellsByCriterias", { value: 0 });
     var pourcentage = Math.floor((gNumberCellsToFill - emptyCells.length) / gNumberCellsToFill * 100)
-    $("#pourcentageFill").text(pourcentage + "%");
+    $("#pourcentageFillSpan").text("Completé : " + pourcentage + "%");
 }
 
 function levelButtonPressed() {

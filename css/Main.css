@@ -1,24 +1,111 @@
+body {
+	background-color: rgb(32, 32, 32);
+}
+
+br {
+	clear: both;
+}
+
+span {
+	font-family: Helvetica Neue,Helvetica,Arial,sans-serif;
+	color: white
+}
+
+#content {
+	background-color: rgb(32, 32, 32);
+	width: 490px;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#divTitle {
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+}
+
+#titleSpan {
+	font-size: 60pt;
+	font-weight: bold;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#nameSpan {
+	font-size: 12pt;
+	font-weight: lighter;
+	margin-left: auto;
+	margin-right: auto;
+}
+
+#divInfos {
+	clear: both;
+	margin-bottom: 4px;
+}
+
+#currentLevelSpan {
+	font-size: 18pt;
+}
+
+#movesNumberSpan, #pourcentageFillSpan {
+	font-size: 16pt;
+	font-weight: lighter;
+}
+
+#movesNumberSpan {
+	float: left;
+}
+
+#pourcentageFillSpan {
+ 	float: right;
+} 
+
 .learningJQ-grid {
     width: auto;
 }
 .learningJQ-cell {
 	background-color: black; 
-	border:solid 1px orange;
+	border: solid 1px orange;
 	font-size:16px;
     font-weight:bold;
     margin:-0.5px;
 }
 
-span {
+#divNewGame {
+	text-align: center;
+}
+
+.levelButton, .newGameButtons {
+	height: 40px;
+	width: 40px;
+	background-color: rgb(32, 32, 32);
+	border: solid 2px white;
 	color: white;
+	margin-left: 10px;
+	margin-right: 10px;
+	vertical-align: middle;
 }
 
-#wrapper {
-	width: 500px;
-	margin-left: auto;
-	margin-right: auto;
+.newGameButtons {
+	border-radius: 20px;
+	font-size: 20pt;
+	font-weight: lighter;
 }
 
-button.currentLevel {
-	background-color: blue;
+#newGameButton {
+	padding-left: 7px;
+}
+
+#divLevelButtons {
+	text-align: center;
+	margin-top: 50px;
+	margin-bottom: 50px;
+}
+
+.levelButton {
+	font-size: 16pt;
+}
+
+.levelButton.currentLevel {
+	background-color: rgba(173,216,230,0.5);
 }
