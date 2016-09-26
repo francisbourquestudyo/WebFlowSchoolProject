@@ -79,7 +79,7 @@ function currentValueChanged() {
 function updateCellsFillPourcentage() {
     var emptyCells = $("#divGrille").grid("cellsByCriterias", { value: 0 });
     var pourcentage = Math.floor((gNumberCellsToFill - emptyCells.length) / gNumberCellsToFill * 100)
-    $("#pourcentageFillSpan").text("Completé : " + pourcentage + "%");
+    $("#pourcentageFillSpan").text("Complété : " + pourcentage + "%");
 }
 
 function levelButtonPressed() {
